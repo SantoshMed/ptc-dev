@@ -1,0 +1,1 @@
+﻿visualFeedback=off&questions=1&types=1,1,1,1,1,1&t1=Which of the following is not a component of the DNA&t2=B&t3=Phosphoric acid&t4=Ribose sugar&t5=Deoxyribose sugar&t6=Nitrogenous base&t10=<B>Incorrect.</B>&t12=<B>Correct!</B>&t13=<B>Incorrect.</B>&t14=<B>Incorrect.</B>&

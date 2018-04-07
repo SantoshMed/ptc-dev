@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<style type="text/css">
+h1 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #990000;
+}
+
+h2 {
+	font-size: 13px;
+	font-weight: bold;
+}
+body{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+</style>
+
+<script language="javascript" type="text/javascript">
+var popwin = null;
+function openContent() {
+	setTimeout(popWindow, 300);
+}
+function popWindow() {
+	var w = 1012;
+	var h = 696;
+	var x = (window.screen.width - w) / 2;
+	var y = (window.screen.height - h) / 3;
+	popwin = window.open('index.html','popwin','width='+w+',height='+h+',left='+x+',top='+y+',status=no,toolbar=no,location=no,menubar=no,resizable=yes,scrollbars=yes');
+	try {
+		if (popwin.focus) popwin.focus();
+	} catch(err) {}
+}
+
+function closeContent() {
+	try {
+		popwin.close();
+	} catch(err) {}
+}
+
+</script>
+
+</head>
+<body scroll="no" onload="openContent();">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div align="center">
+        <h2>This page opens the lesson you selected in a new window.</h2>
+
+        <h1>Do NOT close this window until AFTER you have exited the lesson.</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<Title>Frame58</Title>
+</head>
+<body>
+<div id="certificateframe">
+	<div id="certificateframedisable"></div>
+	
+	<div id="certificatecomplete">&nbsp;</div>
+	<div id="certificatepopup1">
+		<img src="images/print_mc.png" /><input type="text" id="printtxt"></input>
+		<img src="images/ok_btn.png" id="printokbtn"/>
+	</div>
+	<div id="certificatepopup2">
+		<img src="images/print_cerificate.png" />
+		<input type="text" id="printname" readonly="readonly"></input>
+		<input type="text" id="printdate" readonly="readonly"></input>
+		<div id="certificatebtns">
+			<img src="images/print_btn.png" id="certificatePrint"/>
+			<img src="images/modify_btn.png" id="certificateModify"/>
+			<img src="images/cancel_btn.png" id="certificateCancel"/>
+		</div>
+	</div>	
+</div>
+</body>
+<script>
+$('#certificatecomplete').hide();
+
+//registerAttractor(page58,95);
+
+function showcertificate(){
+	$('#certificatecomplete').show();
+	//setTimeout(function(){ showAttractorMessage();},1000);
+}
+
+$('#certificatecomplete').bind(clickHandler, function(){
+	$('#certificatepopup1').fadeIn();
+	$('#certificateframedisable').show();
+});
+
+$('#printokbtn').bind(clickHandler, function(){
+	if($('#printtxt').val()!="")
+	{
+		var d = new Date();
+		$('#certificatepopup1').hide();
+		$('#printname').val($('#printtxt').val());
+		$('#printdate').val(d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear());
+		$('#certificatepopup2').fadeIn();
+	}
+	else alert("Please enter your name");
+});
+$('#certificatePrint').bind(clickHandler, function(){
+	var name = $('#printname').val();
+	var date = $('#printdate').val();
+	
+	p = window.open('', '_blank', 'status=no,toolbar=no,menubar=yes,height=400px,width=640px'); 
+	p.document.open(); 
+	p.document.write('<html><head><title>Certificate</title>');
+	p.document.write('<link rel="stylesheet" type="text/css" href="print.css"></head><body>');
+	p.document.write('<div id="certificatepopup3"><img src="images/print_cerificate.png" /><input type="text" id="printname2"  readonly="readonly" value="'+name+'"></input><input type="text" id="printdate2"  readonly="readonly" value="'+date+'"></input></div>'); 
+	p.document.write('</body></html>');
+	p.document.close();
+	p.print();
+	if(navigator.userAgent.indexOf("iPad;")<=0) p.close();
+});
+$('#certificateModify').bind(clickHandler, function(){
+	$('#certificatepopup2').hide();
+	$('#certificatepopup1').fadeIn();
+});
+$('#certificateCancel').bind(clickHandler, function(){
+	$('#certificatepopup2').fadeOut();
+	$('#certificateframedisable').hide();
+});
+</script>
+</html>

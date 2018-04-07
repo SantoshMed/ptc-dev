@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Introduction and Principles of Key Account Management</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="js/saba_scorm-1.1.js"></script>
+<script language="JavaScript">
+var startAttempts = 0;
+function lmsStart() {
+  if (startAttempts++>3) return;
+  if (doLMSInitialize()) {
+    var prevStat = doLMSGetValue("cmi.core.lesson_status");
+    if (!prevStat || prevStat=="") prevStat = "u";
+    prevStat = prevStat.substring(0,1).toLowerCase();
+    if (prevStat=="n" || prevStat=="u") { // unknown or not attempted
+      doLMSSetValue("cmi.core.lesson_status", "incomplete");
+      //doLMSSetValue('cmi.core.exit','suspend');
+      doLMSCommit();
+    }
+    document.getElementById('Medtrix_content').src = "module/index.html";
+  } else {
+    setTimeout(lmsStart, 500); // API not initialized, try a few more times
+  }
+}
+var startTime = new Date().getTime();
+var finishing = false;
+function lmsFinish() {
+    if (finishing) return;
+    finishing = true;
+    SCORMFinish(startTime);
+}
+
+
+</script>
+</head>
+
+<frameset cols="*" frameborder="0" framespacing="0" onload="lmsStart();" onunload="lmsFinish();" onbeforeunload="lmsFinish();">
+    <frame id="Medtrix_content" src="loading.html" marginwidth="100%" marginheight="100%" scrolling="no" frameborder="0" noresize>
+</frameset>
+
+<noframes>
+    <body>Your browser does not support html framesets and cannot view this content.</body>
+</noframes>
+</html>

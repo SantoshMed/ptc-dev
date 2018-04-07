@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Frame 1 Custom HTML</title>
+	<style>
+		#fr1btn { 
+			position: absolute;
+			top: 351px;
+			left: 49%;
+			cursor: pointer;
+			width: 308px;
+			height: 62px;
+		}
+		#fr1{
+			position: relative;
+			width: 100%;
+			background: #fff;
+		}
+			
+	</style>
+</head>
+<body>
+<div id="fr1">
+	<img src="images/splash_new.png" height="648px" />
+	<div id="fr1btn"></div>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+	setTimeout(function(){ $('#fr1btn').fadeIn(1000);}, 1000);
+});
+
+$('#fr1btn').bind(clickHandler, function(){
+	nextFrame(this);
+});
+</script>
+</html>

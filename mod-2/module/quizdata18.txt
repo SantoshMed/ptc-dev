@@ -1,0 +1,1 @@
+﻿visualFeedback=off&questions=1&types=0,1,1,1,1,1&t1=State whether the following statement is TRUE or FALSE : Transcription is a DNA-directed process of RNA synthesis where the DNA base sequence is rewritten into an RNA base sequence.&t2=A&t3=True&t4=False&t10=<B>Correct!</B>&t11=<B>Incorrect.</B>&

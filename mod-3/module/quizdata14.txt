@@ -1,0 +1,1 @@
+﻿visualFeedback=off&questions=1&types=0,1,1,1,1,1&t1=State whether the following statement is TRUE or FALSE : Somatic mutations are transmitted to future generations.&t2=B&t3=True&t4=False&t10=<B>Incorrect.</B>&t11=<B>Correct!</B>&

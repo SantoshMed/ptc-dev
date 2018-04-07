@@ -1,0 +1,7 @@
+﻿#certificatepopup3 { display: block; position: absolute; top: 10px; left: 10px; z-index: 8;}
+#printtxt { position: absolute; width: 220px; height: 20px; top: 105px; left: 45px; border: 1px solid;}
+#printname2 { position: absolute; width: 220px; height: 20px; top: 166px; left: 110px; border: none; border-bottom: 1px solid; text-align: center; }
+#printdate2 { position: absolute; width: 100px; height: 20px; top: 255px; left: 225px; border: none;}
+#printokbtn { position: absolute; top: 145px; left: 45px; cursor: pointer;}
+#certificatebtns { display: none; position: absolute; top: 340px; left: 20px; width: 500px;}
+#certificatebtns img{ cursor: pointer;}

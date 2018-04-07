@@ -1,0 +1,1 @@
+﻿visualFeedback=off&questions=1&types=1,1,1,1,1,1&t1=Choose the correct: answer Which among the following entity is known as the “functional unit of heredity”?&t2=B&t3=Chromosome&t4=Gene&t5=Allele&t6=Genome&t10=<B>Incorrect.</B>&t11=<B>Correct!</B>&t12=<B>Incorrect.</B>&&t13=<B>Incorrect.</B>&

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+select {
+    color: #272139;
+    padding: 10px 10px;
+    margin: 4px 0px;
+    border-radius: 5px;
+    width: 380px;
+    border: 1px solid #ddd;
+}
+option {color: black;}
+.textGreen{ color: #008000 !important;}
+.textRed{ color: #ee7624 !important;}
+.noColor{ color: #000000 !important;}
+#ext-page-11{    
+    width: 100%;
+    padding: 20px 40px;
+    position: relative;
+    background: #fff;
+    margin: 70px auto;
+}
+#ext-page-11 p{
+    font-size: 12pt;
+    margin: 00px 0px 10px 0px;
+    color: #000;
+    font-weight: bold;
+}
+.qzSec_11{
+    background: #f3f3eb;
+    position: relative;
+    padding: 20px 10px;
+    height: 407px;
+    border: 1px solid #d0d0d0;
+}
+.qzTitle_11{
+    position: relative;
+    font-weight: bold;
+    font-size: 12pt;
+    background: #231d35;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+.qzSec_11 span{
+    position: relative;
+    color: #fff;
+    background: #ee7624;
+    padding: 10px 10px;
+    margin: 0px 10px 0px;
+    border-radius: 5px;
+}
+.feedBack_11{
+    position: relative;
+    z-index: 9;
+    bottom: 150px;
+    text-align: center;
+}
+@media (min-width: 768px)and (max-width: 1024px){
+    .qzSec_11 span {
+    margin: 0px 10px 0px;
+    width: 32%;
+    }
+    select {
+    margin: 0px 0px 12px 0px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div id="ext-page-11">
+<p>You will now be presented with a learning activity. Please answer the question and click submit to proceed.</p>
+<div class="qzTitle_11">Match the following</div>
+<div class="qzSec_11">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="100%" valign="middle" class="tab1"><span>A. Endocrine signaling molecules</span>
+	<select name="options1" id="1">
+          <option selected="selected">Select one</option>
+          <option>Respond to signal molecules synthesized by themselves</option>
+          <option>Act on target sites close to their site of synthesis</option>
+          <option>Act at a distant site</option>
+        </select>
+       </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="tab2"><span>B. Paracrine signaling molecules</span>
+        <select name="options2" id="2">
+          <option selected="selected">Select one</option>
+          <option>Respond to signal molecules synthesized by themselves</option>
+          <option>Act on target sites close to their site of synthesis</option>
+          <option>Act at a distant site</option>
+        </select> 
+	</td>
+    </tr>
+    <tr>
+      <td valign="middle" class="tab3"><span>C. Autocrine signaling molecules</span>
+          <select name="options3" id="3">
+          <option selected="selected">Select one</option>
+          <option>Respond to signal molecules synthesized by themselves</option>
+          <option>Act on target sites close to their site of synthesis</option>
+          <option>Act at a distant site</option>
+        </select>
+	</td>
+    </tr>
+    </table>
+</div>
+
+<div class="feedBack_11">
+<div class="fbText_11"></div>
+<!--<div class="submitBtn_11"><img src="ext/submit_btn.jpg" width="125" height="35" align="right" /></div> -->
+</div>
+
+
+<script>
+var numCorrect =0;
+    var attempted = new Array(0,0,0,0,0);
+    var answerCodes = new Array("Act at a distant site","Act on target sites close to their site of synthesis","Respond to signal molecules synthesized by themselves");
+    $('select').change(function() {
+		
+		//$(this).find('option').addClass('noColor');
+        var selectedId = $(this).attr("id");
+        var selectedOption = $(this).find('option:selected');
+        var selectedOptionText = $(selectedOption).text();
+	//	$(selectedOption).removeClass("textGreen").removeClass("textRed");
+	if(selectedOptionText ==answerCodes[selectedId-1]){
+            if(attempted[selectedId-1]==0) {
+                attempted[selectedId-1]=1;
+                numCorrect++;
+            }
+            $(".fbText_11").html(numCorrect+" of "+answerCodes.length+" correct answers.");
+			// $(selectedOption).css('color','green');
+			//$(this).addClass('textGreen');
+			$(selectedOption).addClass('textGreen');
+			$(this).removeAttr('class').addClass('textGreen');
+        }else{
+             if(attempted[selectedId-1]!=0){attempted[selectedId-1]=0;numCorrect--;}
+             $(".fbText_11").html(" Incorrect Selection. You have got "+numCorrect+" of "+answerCodes.length +" correct.");
+			$(selectedOption).addClass('textRed');
+			$(this).removeAttr('class').addClass('textRed');
+			}
+        if(numCorrect ==answerCodes.length){
+            showAttractorMessage();
+        }
+    });
+   //$('select').bind(clickHandler,function(){
+	//	$(this).css('color','#000000');
+   //});
+/*
+$("#ext-page-11 .submitBtn_11").bind(clickHandler, function() { 
+    if(numCorrect ==answerCodes.length){
+           $('select').attr('disabled','disabled');
+           $(".fbText_11").html("You have answered correctly for "+numCorrect+" of "+answerCodes.length +" Questions ");
+    } else{
+        $(".fbText_11").html("Please answer all questions. "+numCorrect+" / "+answerCodes.length);
+    } 
+});*/
+</script>
+</div>
+</body>
+</html>

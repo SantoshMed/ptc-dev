@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>PTC Degree Module 03: Mutations and Genetics</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="html-ext.css">
+<link rel="stylesheet" href="css/fontawesome-all.css">
+
+<link rel="stylesheet" href="ui_styles/jquery.ui.all.css" >
+<script type="text/javascript" src="../js/jquery.1.6.min.js"></script>
+<script type="text/javascript" src="../js/swfobject.js"></script>
+<script type="text/javascript" src="../js/iplayer-0.7.js"></script>
+<script type="text/javascript" src="../js/saba_scorm-1.1.js"></script>
+<script type="text/javascript" src="../js/iscroll-lite.js"></script>
+<script type="text/javascript" src="../js/jScroll.js"></script>
+<script type="text/javascript" src="../js/moduleplayer-1.6.js"></script>
+<script type="text/javascript" src="../js/quiz-1.2.js"></script>
+<script src="../js/jquery.ui.core.js" type="text/javascript"></script>
+<script src="../js/jquery.ui.widget.js" type="text/javascript"></script>
+<script src="../js/jquery.ui.mouse.js" type="text/javascript"></script>
+<script src="../js/jquery.ui.slider.js" type="text/javascript"></script>
+<script src="../js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/extra/jquery.ui.draggable.js"></script>
+<script type="text/javascript" src="../js/extra/jquery.ui.droppable.js"></script>
+</head>
+<body>
+  <div id="player">
+  <div id="playerDisable"></div>
+  <div id="frameDisable"></div>
+    <!-- Player Controls -->
+    <div id="debug"><b>Debug Log</b></div>
+    <div id="loading">loading content...<span id="progress">0</span>%<br><br><img src="images/loader.gif" border="0" alt="" width="31" height="31"></div>
+    <div id="topnav">
+        <div id="module-title">PTC Degree Module 03: Mutations and Genetics</div>
+        <div id="helpbtn" class="btn" style="margin-right:31px;" >
+            <i class="fas fa-question-circle fa-lg"></i>
+            <span>Help</span>
+        </div>
+		    <div id="pdfbtn" class="btn" >
+                <i class="fas fa-print fa-lg"></i>
+                <span>Print</span>
+            </div>
+        <div id="referencesbtn" class="btn">
+            <i class="fas fa-bookmark fa-lg"></i>
+            <span>References</span>
+        </div>
+        <div id="glossarybtn" class="btn" >
+            <i class="fab fa-autoprefixer fa-lg"></i>
+            <span>Glossary</span>
+        </div>
+        <div id="homeBtn" class="btn" >
+            <i class="fas fa-home fa-lg"></i>
+            <span>Home</span>
+        </div>
+    </div>
+    <div id="frame-title"></div>
+
+    <div id="toc">
+        <div id="wrapper">
+        <div class="scrollbar" id="style-1">
+            <div class="force-overflow" >
+                <div id="toc_list1"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="help">
+        <div class="frameHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i><span>This is Frame Title</span></div>
+        <div class="titleHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>This is Module Title</span></div>
+        <div class="hHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br> Help</span></div>
+        <div class="printHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br>Print PDF</span></div>
+        <div class="referHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br>References Popup</span></div>
+        <div class="glossaryHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br>Glossary Popup</span></div>
+        <div class="homeHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br>goto Home</span></div>
+        <div class="menuHelp textH2"><span>Click for</br>Menu</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="playHelp textH2"><span>Click for</br>Play/Pause</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="replayHelp textH2"><span>Click for</br>Replay</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="barHelp textH2"><span>Player Bar</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="previousHelp textH2"><span>Click for</br>Previous frame</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="nextHelp textH2"><span>Click for</br>Next frame</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="trnsHelp textH2"><span>Click for</br>Transcript Popup</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div id="helpCls">Return to the Module</div>
+    </div>
+    <div id="msg"></div>
+
+    <div id="nav">
+      <div id="counter" class="btn"><i class="fas fa-bars fa-lg"></i></div>
+      <div id="pauseplaybtn" class="btn"><i class="fas fa-pause fa-lg"></i></div>
+      <div id="replaybtn" class="btn"><i class="fas fa-redo-alt fa-lg"></i></div>
+      <div id="prevbtn" class="btn"><i class="fas fa-chevron-left fa-lg"></i></div>
+      <div id="nextbtn" class="btn"><i class="fas fa-chevron-right fa-lg"></i></div>
+      <div id="counterText">loading</div>
+	  <!-- <div id="mutebtn" class="btn"><i class="fas fa-volume-down fa-2x"></i></div> -->
+	  <div id="sliderHover"><div id="sliderColor"></div></div>
+	  <div id="slider"></div>
+	  <div id="sliderOverlay"></div>
+	  <div id="sliderMsg"></div>
+	  <div id="videoTimer" style="position: absolute; top: 16px; left: 480px; z-index: 10; font-size: 13px; text-align: center; font-weight: bold; color: white;"></div>
+    <div id="transcript_btn" class="btn"><i class="fas fa-angle-up"></i>Transcript</div>  
+  </div>
+    
+  <div id="progresswrapper"><div id="progressbar"></div></div>
+    <div id="disclaimer">For Internal use only. This training material is for educational purposes only. It is not to be used, shared, or discussed with customers.</div>
+    <div id="rotate">Please rotate your device 90&deg; to landscape view.</div>
+      <div id="transcript"><div id="transcript_inner">
+            <div id="wrapper">
+                <div class="scrollbar" id="style-1">
+                    <div class="force-overflow" >
+                        <div id="transcript_scroller"></div>
+                    </div>
+                </div>
+                </div>
+        </div></div>
+      
+      <div id="glossary">
+        <div class="glossaryHeader">
+            <div class="headLebel">GLOSSARY</div>
+            <div class="close">X</div>
+        </div>
+		<div id="glossary_letters">
+		</div>
+      <div id="glossary_list"><div id="glossary_scroller"></div></div>
+      <div id="glossary_term">
+        <div id="glossary_definition">Select a term from the list on the left</div>
+      </div>
+      <div id="glossary_references"></div>
+    </div>
+    <!-- REFERENCE POPUP -->
+	<div id="references">
+    <div class="referenceHader">
+        <div class="headLebel">REFERENCES</div>
+        <div id="referencesClose">X</div>
+    </div>
+<div id="referencesWrapper">
+    <ol>
+        <li>Longo DL, Fauci AS, Kasper DL, Hauser SL, Jameson J, Loscalzo J. eds. Harrison's Principles of Internal Medicine. 18 ed. New York, NY: McGraw-Hill; 2012.</li>
+        <li>Davidson S, Bouchier I, Edwards C. Davidson's Principles and Practice of Medicine. 21st ed. London: E.L.B.S. and Churchill Livingstone; 2010.</li>
+        <li>Weaver RF. Molecular Biology. 5th ed. New York, NY: McGraw-Hill; 2008.</li>
+        <li>Goldman L, Schafer AI. Goldman's Cecil Medicine. 24th ed. Philadelphia: Elsevier/Saunders; 2012.</li>
+        <li>Kumar PJ, Clark ML. Kumar & Clark's Clinical Medicine. 7th ed. Edinburgh: Saunders/Elsevier; 2009.</li>
+        <li>Genetic testing. US National Library of Medicine Web site. https://ghr.nlm.nih.gov/primer/testing/genetictesting. Accessed: February 12, 2018.</li>
+        <li>Kumar V, Abbas AK, Aster JC. Robbins Basic Pathology.9th ed. Philadelphia, PA: Elsevier/Saunders; 2013.</li>
+        <li>Guyton AC, Hall JE. Textbook of Medical Physiology. 11th ed. Philadelphia, PA: Saunders Elsevier; 2006.</li>
+        <li>Genetic testing. Medline plus Web site. Available at https://medlineplus.gov/genetictesting.html. Accessed on February 12, 2018.</li>
+        <li>Flanigan KM. The muscular dystrophies. Semin Neurol. 2012 Jul;32(3):255-63.</li>
+        <li>Blake DJ, Weir A, Newey SE, et al. Function and genetics of dystrophin and dystrophin-related proteins in muscle. Physiol Rev. 2002 Apr;82(2):291-329.</li>
+        <li>Song T, Lee KA, Kang SW, Cho H, Choi YC. Three cases of manifesting female carriers in patients with Duchenne muscular dystrophy. Yonsei Med J. 2011 Jan;52(1):192-5.</li>
+    </ol>
+</div>
+</div>
+
+
+    <div id="popup">
+      <div id="popup_information"><div id="popup_scroller"></div></div>
+      <div class="close"></div>
+    </div>
+    <!-- <div id="splash"></div> -->
+    <div id="video-preload"></div>
+    <div id="video-loading"><img src="images/loader.gif" width="31" height="31" border="0" alt="loading content..."></div>
+    <div id="video-intercept"></div>
+    <div id="video"></div>
+	<div id="notesContent">
+		<div id="notesextbtn"><img src="images/exit-btn.png"></div>
+		<textarea rows="2" cols="20" id="notesTxt"></textarea>
+		<img src="images/print_img.png" id="notesPrint"/>
+	</div>
+	<div id="pdfcontent">		
+		<a href="transcript.pdf" target="_blank">Printable Training Module</a>
+	</div>
+    <div id="modal-bookmark"><div id="bookmark-msg">Do you want to resume from where you left off?<br><br><button>YES</button><button>NO</button></div></div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿visualFeedback=off&questions=1&types=1,1,1,1,1,1&t1=Which of the following is NOT a function of a gene?&t2=D&t3=Duplicate strictly&t4=Govern the production of RNAs and proteins&t5=Build-up mutations&t6=None of the above&t10=<B>Incorrect.</B>&t11=<B>Incorrect.</B>&t12=<B>Incorrect.</B>&&t13=<B>Correct!</B>&

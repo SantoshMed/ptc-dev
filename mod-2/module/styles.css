@@ -360,7 +360,7 @@ body { text-align:center; font-family: "arial", arial, sans-serif; font-size: 14
     background: #fff;
 }
 #f1{z-index: 99;}
-#f7, #f12, #f18, #f21{z-index: 9;}
+#f7, #f12, #f18, #f24{z-index: 9;}
 #splash {
     z-index: 4;
     position: absolute;
@@ -686,13 +686,14 @@ sup { bottom: 1ex;}
 
 @media (min-width: 768px)and (max-width: 1024px){
     .quiz li {
-        width: 68%;
+        width: 70%;
     }
     .quiz .feedback {
         height: 60px;
         padding: 20px 20px;
         right: 80px;
-        top: 380px;
+        top: 335px;
+        width: 190px;
     }
     .quiz #quiz-submit {
         right: 114px;
@@ -700,6 +701,14 @@ sup { bottom: 1ex;}
     }
     #video-loading {
         left: 0%;
+    }
+    .quiz .quiz-submit {
+        display: none;
+        height: 40px;
+        position: absolute;
+        right: 94px;
+        top: 416px;
+        width: 157px;
     }
   
 }

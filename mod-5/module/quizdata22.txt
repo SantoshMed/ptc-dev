@@ -1,0 +1,1 @@
+﻿visualFeedback=off&questions=1&types=1,1,1,1,1,1&t1=Fill in the blank by choosing the most appropriate answer : Deflazacort reduces the risk of vertebral fractures by ___________&t2=B&t3=0.4 fold&t4=1.4 fold&t5=5.4 fold&t6=10.4 fold&t10=<B>Incorrect.</B>&t11=<B>Correct!</B>&t12=<B>Incorrect.</B>&t13=<B>Incorrect.</B>&

@@ -1,1 +1,1 @@
-﻿visualFeedback=off&questions=1&types=0,1,1,1,1,1&t1=Identify whether the following statement is true or false: A protein’s structure determines the function of that protein.&t2=A&t3=True&t4=False&t10=<B>Correct!</B>&t11=<B>Incorrect.</B>&
+﻿visualFeedback=off&questions=1&types=0,1,1,1,1,1&t1=Identify whether the following statement is TRUE or FALSE : According to the CINRG data, glucocorticoid treatment reduces the risk of losing clinically meaningful mobility.&t2=A&t3=True&t4=False&t10=<B>Correct!</B>&t11=<B>Incorrect.</B>&

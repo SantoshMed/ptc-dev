@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>PTC Academy Module: Ataluren</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="html-ext.css">
+<link rel="stylesheet" href="css/fontawesome-all.css">
+
+<link rel="stylesheet" href="ui_styles/jquery.ui.all.css" >
+<script type="text/javascript" src="../js/jquery.1.6.min.js"></script>
+<script type="text/javascript" src="../js/swfobject.js"></script>
+<script type="text/javascript" src="../js/iplayer-0.7.js"></script>
+<script type="text/javascript" src="../js/saba_scorm-1.1.js"></script>
+<script type="text/javascript" src="../js/iscroll-lite.js"></script>
+<script type="text/javascript" src="../js/jScroll.js"></script>
+<script type="text/javascript" src="../js/moduleplayer-1.6.js"></script>
+<script type="text/javascript" src="../js/quiz-1.2.js"></script>
+<script src="../js/jquery.ui.core.js" type="text/javascript"></script>
+<script src="../js/jquery.ui.widget.js" type="text/javascript"></script>
+<script src="../js/jquery.ui.mouse.js" type="text/javascript"></script>
+<script src="../js/jquery.ui.slider.js" type="text/javascript"></script>
+<script src="../js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/extra/jquery.ui.draggable.js"></script>
+<script type="text/javascript" src="../js/extra/jquery.ui.droppable.js"></script>
+</head>
+<body>
+  <div id="player">
+  <div id="playerDisable"></div>
+  <div id="frameDisable"></div>
+    <!-- Player Controls -->
+    <div id="debug"><b>Debug Log</b></div>
+    <div id="loading">loading content...<span id="progress">0</span>%<br><br><img src="images/loader.gif" border="0" alt="" width="31" height="31"></div>
+    <div id="topnav">
+        <div id="module-title">PTC Academy Module: Ataluren</div>
+        <div id="helpbtn" class="btn" style="margin-right:31px;" >
+            <i class="fas fa-question-circle fa-lg"></i>
+            <span>Help</span>
+        </div>
+		    <div id="pdfbtn" class="btn" >
+                <i class="fas fa-print fa-lg"></i>
+                <span>Print</span>
+            </div>
+        <div id="referencesbtn" class="btn">
+            <i class="fas fa-bookmark fa-lg"></i>
+            <span>References</span>
+        </div>
+        <div id="glossarybtn" class="btn" >
+            <i class="fab fa-autoprefixer fa-lg"></i>
+            <span>Glossary</span>
+        </div>
+        <div id="homeBtn" class="btn" >
+            <i class="fas fa-home fa-lg"></i>
+            <span>Home</span>
+        </div>
+    </div>
+    <div id="frame-title"></div>
+
+    <div id="toc">
+        <div id="wrapper">
+        <div class="scrollbar" id="style-1">
+            <div class="force-overflow" >
+                <div id="toc_list1"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="help">
+        <div class="frameHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i><span>This is Frame Title</span></div>
+        <div class="titleHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>This is Module Title</span></div>
+        <div class="hHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br> Help</span></div>
+        <div class="printHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br>Print PDF</span></div>
+        <div class="referHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br>References Popup</span></div>
+        <div class="glossaryHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br>Glossary Popup</span></div>
+        <div class="homeHelp textH"><i class="fas fa-long-arrow-alt-up fa-2x"></i> <span>Click for</br>goto Home</span></div>
+        <div class="menuHelp textH2"><span>Click for</br>Menu</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="playHelp textH2"><span>Click for</br>Play/Pause</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="replayHelp textH2"><span>Click for</br>Replay</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="barHelp textH2"><span>Player Bar</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="previousHelp textH2"><span>Click for</br>Previous frame</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="nextHelp textH2"><span>Click for</br>Next frame</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div class="trnsHelp textH2"><span>Click for</br>Transcript Popup</span><i class="fas fa-long-arrow-alt-down fa-2x"></i> </div>
+        <div id="helpCls">Return to the Module</div>
+    </div>
+    <div id="msg"></div>
+
+    <div id="nav">
+      <div id="counter" class="btn"><i class="fas fa-bars fa-lg"></i></div>
+      <div id="pauseplaybtn" class="btn"><i class="fas fa-pause fa-lg"></i></div>
+      <div id="replaybtn" class="btn"><i class="fas fa-redo-alt fa-lg"></i></div>
+      <div id="prevbtn" class="btn"><i class="fas fa-chevron-left fa-lg"></i></div>
+      <div id="nextbtn" class="btn"><i class="fas fa-chevron-right fa-lg"></i></div>
+      <div id="counterText">loading</div>
+	  <!-- <div id="mutebtn" class="btn"><i class="fas fa-volume-down fa-2x"></i></div> -->
+	  <div id="sliderHover"><div id="sliderColor"></div></div>
+	  <div id="slider"></div>
+	  <div id="sliderOverlay"></div>
+	  <div id="sliderMsg"></div>
+	  <div id="videoTimer" style="position: absolute; top: 16px; left: 480px; z-index: 10; font-size: 13px; text-align: center; font-weight: bold; color: white;"></div>
+    <div id="transcript_btn" class="btn"><i class="fas fa-angle-up"></i>Transcript</div>  
+  </div>
+    
+  <div id="progresswrapper"><div id="progressbar"></div></div>
+    <div id="disclaimer">For Internal use only. This training material is for educational purposes only. It is not to be used, shared, or discussed with customers.</div>
+    <div id="rotate">Please rotate your device 90&deg; to landscape view.</div>
+      <div id="transcript"><div id="transcript_inner">
+            <div id="wrapper">
+                <div class="scrollbar" id="style-1">
+                    <div class="force-overflow" >
+                        <div id="transcript_scroller"></div>
+                    </div>
+                </div>
+                </div>
+        </div></div>
+      
+      <div id="glossary">
+        <div class="glossaryHeader">
+            <div class="headLebel">GLOSSARY</div>
+            <div class="close">X</div>
+        </div>
+		<div id="glossary_letters">
+		</div>
+      <div id="glossary_list"><div id="glossary_scroller"></div></div>
+      <div id="glossary_term">
+        <div id="glossary_definition">Select a term from the list on the left</div>
+      </div>
+      <div id="glossary_references"></div>
+    </div>
+    <!-- REFERENCE POPUP -->
+	<div id="references">
+    <div class="referenceHader">
+        <div class="headLebel">REFERENCES</div>
+        <div id="referencesClose">X</div>
+    </div>
+<div id="referencesWrapper">
+    <ol>
+        <li>Welch EM, Barton ER, Zhuo J, et al. PTC124 targets genetic disorders caused by nonsense mutations. Nature. 2007; 447(7140):87-91.</li>
+        <li>Ryan NJ. Ataluren: First global approval. Drugs. 2014;74:1709–14.</li>
+        <li>Rodino-Klapac LR, Mendell JR. Principles and practice of molecular therapies. In: Darras BT, Jones Jr. HR, Ryan MM et al.  eds. Neuromuscular Disorders of Infancy, Childhood and Adolescence, 2nd ed. Amsterdam, The Netherlands. Elsevier Inc. 2015.</li>
+        <li>Bolze F1, Mocek S, Zimmermann A, et al. Aminoglycosides, but not PTC124 (Ataluren), rescue nonsense mutations in the leptin receptor and in luciferase reporter genes. Sci Rep. 2017 Apr 21;7(1):1020.</li>
+        <li>Song TJ, Lee KA, Kang SW, Cho H, Choi YC. Three cases of manifesting female carriers in patients with Duchenne muscular dystrophy. Yonsei Med J. 2011;52(1):192-5.</li>
+        <li>Longo DL, Fauci AS, Kasper DL, Hauser SL, Jameson J, Loscalzo J, eds. Harrison's Principles of Internal Medicine. 18 ed. New York, NY: McGraw-Hill; 2012.</li>
+        <li>Flanigan KM. The muscular dystrophies. Semin Neurol. 2012;32(3):255-263.</li>
+        <li>Peltz SW, Morsy M, Welch EM, Jacobson A. Ataluren as an agent for therapeutic nonsense suppression. Ann Rev Med. 2013;64:407-425</li>
+        <li>Siddiqui N, Sonenberg N. Proposing a mechanism of action for ataluren. Proc Natl Acad Sci U S A. 2016 Nov 1;113(44):12353-55.</li>
+        <li>Ataluren (NDA: 200896) Briefing Document. PERIPHERAL and central nervous system drugs advisory committee meeting, September 28, 2017. Available at: https://www.fda.gov/downloads/advisorycommittees/committeesmeetingmaterials/drugs/peripheralandcentralnervoussystemdrugsadvisorycommittee/ ucm577352.pdf. Accessed on: 16 March 2018.</li>
+        <li>Blat Y, Blat S. Drug discovery of therapies for Duchenne muscular dystrophy. J Biomol Screen. 2015;20(10):1189-1203.</li>
+        <li>Bushby K. Ataluren treatment of patients with nonsense mutation dystrophinopathy. Muscle Nerve. 2014;50(4):477-487.</li>
+        <li>Nelson SF, Crosbie RH, Miceli MC, Spencer MJ. Emerging genetic therapies to treat Duchenne muscular dystrophy. Curr Opin Neurol. 2009;22(5):532-8.</li>
+        <li>Keeling KM. Nonsense suppression as an approach to treat lysosomal storage diseases. Diseases. 2016 Dec;4(4). pii: 32.</li>
+        <li>Roy B. Ataluren stimulates ribosomal selection of near-cognate tRNAs to promote nonsense suppression. Proc Natl Acad Sci. 2016;113(44):12508-12513.</li>
+        <li>Roy B. Nonsense suppression by near-cognate tRNAs employs alternative base pairing at codon positions 1 and 3. Proc Natl Acad Sci. 2015;112(10):3038-3043.</li>
+        <li>17.	Hirawat S. Safety, tolerability, and pharmacokinetics of PTC124, a nonaminoglycoside nonsense mutation suppressor, following single- and multiple-dose administration to healthy male and female adult volunteers. J Clin Pharmacol. 2007;47(4):430-444.</li>
+        <li>18.	European Medicines Agency, 2014. Press release. Available at: http://www.ema.europa.eu/docs/en_GB/document_library/Press_release/2014/05/WC500167540.pdf. Accessed on: 9 Mar 2018.</li>
+        <li>19.	Namgoong JH, Bertoni C. Clinical potential of ataluren in the treatment of Duchenne muscular dystrophy. Degenerative Neurological and Neuromuscular Disease. 2016;6:37–48.</li>
+    </ol>
+</div>
+</div>
+
+
+    <div id="popup">
+      <div id="popup_information"><div id="popup_scroller"></div></div>
+      <div class="close"></div>
+    </div>
+    <!-- <div id="splash"></div> -->
+    <div id="video-preload"></div>
+    <div id="video-loading"><img src="images/loader.gif" width="31" height="31" border="0" alt="loading content..."></div>
+    <div id="video-intercept"></div>
+    <div id="video"></div>
+	<div id="notesContent">
+		<div id="notesextbtn"><img src="images/exit-btn.png"></div>
+		<textarea rows="2" cols="20" id="notesTxt"></textarea>
+		<img src="images/print_img.png" id="notesPrint"/>
+	</div>
+	<div id="pdfcontent">		
+		<a href="transcript.pdf" target="_blank">Printable Training Module</a>
+	</div>
+    <div id="modal-bookmark"><div id="bookmark-msg">Do you want to resume from where you left off?<br><br><button>YES</button><button>NO</button></div></div>
+  </div>
+
+</body>
+</html>
